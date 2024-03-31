@@ -32,6 +32,11 @@ function listarVagas() {
 
   function exibirVaga() {
     const indice = prompt("Informe o índice da vaga que deseja exibir:")
+
+    if (indice >= vagas.length || indice < 0){
+        alert("Indice inválido")
+        return // "retunr" para encerrrar a função
+    }
     const vaga = vagas[indice]
   
     const candidatosEmTexto = vaga.candidatos.reduce((textoFinal, candidato) => textoFinal + "\n - " + candidato, "")
